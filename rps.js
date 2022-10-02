@@ -1,3 +1,4 @@
+
 let playerScore = 0;
 let computerScore = 0;
 let buttons = document.querySelectorAll("button");
@@ -28,33 +29,48 @@ function playRound(playerSelection){
             playerScore += 1;
 
             result = ("You Won !!");
-            playerChoice = (playerSelection + "<br> Player Score: " + playerScore);
-            computerChoice = (computerSelection + "<br> Computer Score: " + computerScore);
+            playerChoice = (playerSelection);
+            computerChoice = (computerSelection);
                 if(playerScore == 5){
-                    result += "You Won !!" + "<br>Reload to PLAY AGAIN";
+                    result += "<br><br>Reload to PLAY AGAIN";
                     disableButtons();
                 }
          }
          else if(playerSelection == computerSelection){
-            playerScore += 1;
-            computerScore += 1;
             result = ("It's a TIE !!");
-            playerChoice = (playerSelection + "<br> Player Score: " + playerScore);
-            computerChoice = (computerSelection + "<br> Computer Score: " + computerScore);
+            playerChoice = (playerSelection);
+            computerChoice = (computerSelection);
          }
          else {
             computerScore +=1;
             result = ("You Lose !!");
-            playerChoice = (playerSelection + "<br> Player Score: " + playerScore);
-            computerChoice = (computerSelection + "<br> Computer Score: " + computerScore);
+            playerChoice = (playerSelection);
+            computerChoice = (computerSelection);
                 if(computerScore == 5){
-                    result += "Computer Won !!" + "<br>Reload to PLAY AGAIN";
+                    result += "Computer Won !!" + "<br><br>Reload to PLAY AGAIN";
                     disableButtons();
                 }
          }
          document.getElementById("result").innerHTML = result;
          document.getElementById("playerChoice").innerHTML = playerChoice;
          document.getElementById("computerChoice").innerHTML = computerChoice;
+         document.getElementById("playerScore").innerHTML = playerScore;
+         document.getElementById("computerScore").innerHTML = computerScore;
+         if(playerChoice == "rock"){
+            document.getElementById("playerChoice").innerHTML = '<i class="fa-regular fa-hand-back-fist fa-3x"></i>';
+         }else if(playerChoice == "paper"){
+            document.getElementById("playerChoice").innerHTML = '<i class="fa-regular fa-hand fa-3x"></i>';
+         }else if(playerChoice == "scissors"){
+            document.getElementById("playerChoice").innerHTML = '<i class="fa-regular fa-hand-scissors fa-3x"></i>';
+         }
+
+         if(computerChoice == "rock"){
+            document.getElementById("computerChoice").innerHTML = '<i class="fa-regular fa-hand-back-fist fa-3x"></i>';
+         }else if(computerChoice == "paper"){
+            document.getElementById("computerChoice").innerHTML = '<i class="fa-regular fa-hand fa-3x"></i>';
+         }else if(computerChoice == "scissors"){
+            document.getElementById("computerChoice").innerHTML = '<i class="fa-regular fa-hand-scissors fa-3x"></i>';
+         }
          return;
 }
 
@@ -64,3 +80,9 @@ buttons.forEach(button =>{
         playRound(button.value);
     })
 })
+
+///
+function playSound() {
+    var sound = document.getElementById("audio");
+    sound.play();
+}

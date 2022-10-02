@@ -4,22 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <title>Rock, Paper & Scissor's</title>
 </head>
 <body>
     <h1>Rock, Paper & Scissor's</h1>
 
-    <div>
-        <button value="rock">Rock</button>
-        <button value="paper">Paper</button>
-        <button value="scissors">Scissor's</button>
+    <div class="container">
+        <button onclick="playSound();" value="rock" id="rock"><i class="fa-regular fa-hand-back-fist fa-9x"></i></button>
+        <button onclick="playSound();" value="paper" id="paper"><i class="fa-regular fa-hand fa-9x"></i></i></button>
+        <button onclick="playSound();" value="scissors" id="scissors"><i class="fa-regular fa-hand-scissors fa-9x"></i></button>
     </div>
-    <div id="result"></div>
-    <div>
-        <div id="playerChoice"></div>
-        <div id="computerChoice"></div>
+<div class="main-info">
+    <div class="info-left">
+        <div id="left-top">
+            <div>Choice</div>
+            <div>Score</div>
+        </div>
+    
+        <div id="playerInfo">
+            <div id="playerChoice"></div>
+            <div id="playerScore"></div> 
+        </div>
+        <div id="left-bottom">Player</div>
     </div>
+
+    <div id="result">First to 5 Wins!</div>
+
+    <div id="info-right">
+        <div id="right-top">
+            <div>Score</div>
+            <div>Choice</div>
+        </div>
+        <div id="computerInfo">
+            <div id="computerScore"></div>
+            <div id="computerChoice"></div>
+        </div>
+        <div id="right-bottom">Computer</div>
+    </div>
+</div>
+    <h4>Made By @rahulbablu</h4>
+    <audio id="audio" src="./assets/click.wav" autoplay="false"></audio>
     <script src="rps.js"></script>
 </body>
 </html>
