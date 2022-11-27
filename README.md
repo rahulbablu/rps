@@ -1,4 +1,4 @@
-# rps
+## rps - https://rps-rahulbablu.vercel.app/
 Rock, Paper &amp; Scissors Game
 
 Rock paper scissors game created with HTML, CSS and JS.
